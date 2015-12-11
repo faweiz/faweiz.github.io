@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PebbleYun</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="pebbyun.min.js?v=12"></script>
+<link rel="stylesheet" type="text/css" href="pebbyun.min.css?v=12" />
+<script type="text/javascript" src="pebbyun.min.js?v=12"></script>
+
+</head>
+<body>
+  <div class="outer">
+    <div class="inner vpwidth">
+      <form action="">
+        <div id="version" class="vpwidth">v0.5</div>
+        <h2 id="title">
+          <img src="img/pebbyun.png" />PebbYun IFTTT Control App
+        </h2>
+        <p class="error verswarning" style="display: none;">You are on an old version of PebbYun. To get all the new features please upgrade.</p>
+        <p class="error versbeta" style="display: none;">This is a beta version of PebbYun. Please report any issues you find.</p>
+        <p class="error versproblem" style="display: none;">Unable to determine current version of PebbYun.</p>
+        <div id="info-message" style="display: none">
+          <p class="settingswrap">
+            PebbYun is free. Please show your appreciation by loving the app in the Pebble app store<a class="ios" href="pebble://appstore/561c1c264af08f0e19000005"> here</a> or a tiny donation.
+          </p>
+        </div>
+        <h3 class="keyhead">IFTTT Maker Key</h3>
+        <div class="keywrap">
+          <div class="keyarea">
+            <label for="key">Your key is:</label><input id="key" type="text" maxlength="50" class="greyborder" placeholder="IFTTT Maker Secret Key" />
+            <br/>
+            See <a href="https://ifttt.com/maker">IFTTT Maker</a> for info.
+          </div>
+        </div>
+        <h3 class="controlhead">Control</h3>
+        <div class="controlwrap">
+          <table class="menuitems">
+            <tr>
+              <td class="tdicon"></td>
+              <td class="tdicon"></td>
+              <td class="tdtxt">Name</td>
+              <td class="tdchk">Toggle</td>
+            </tr>
+            <tr class="tralt">
+              <td class="tdicon"></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName1" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="1st menu name" /></td>
+              <td class="tdchk"><input id="toggle1" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr>
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName2" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="2nd menu name" /></td>
+              <td class="tdchk"><input id="toggle2" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr class="tralt">
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName3" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="3rd menu name" /></td>
+              <td class="tdchk"><input id="toggle3" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr>
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName4" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="4th menu name" /></td>
+              <td class="tdchk"><input id="toggle4" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr class="tralt">
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName5" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="5th menu name" /></td>
+              <td class="tdchk"><input id="toggle5" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr>
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName6" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="6th menu name" /></td>
+              <td class="tdchk"><input id="toggle6" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr class="tralt">
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName7" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="7th menu name" /></td>
+              <td class="tdchk"><input id="toggle7" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr>
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName8" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="8th menu name" /></td>
+              <td class="tdchk"><input id="toggle8" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr class="tralt">
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"><img src="img/down.png" class="downicon" /></td>
+              <td class="tdtxt"><input id="menuName9" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="9th menu name" /></td>
+              <td class="tdchk"><input id="toggle9" type="checkbox" class="togglechk" /></td>
+            </tr>
+            <tr>
+              <td class="tdicon"><img src="img/up.png" class="upicon" /></td>
+              <td class="tdicon"></td>
+              <td class="tdtxt"><input id="menuName10" type="text" maxlength="20" class="namefield" pattern="[A-Za-z0-9 ]" title="Action name" placeholder="10th menu name" /></td>
+              <td class="tdchk"><input id="toggle10" type="checkbox" class="togglechk" /></td>
+            </tr>
+          </table>
+          <div class="indent paddedbottom paddedtop">
+            <input class="noset save" type="button" id="save" value="Save" />
+          </div>
+        </div>
+      </form>
+      <h3 class="helphead">Help</h3>
+      <div class="helpwrap">
+      <ul>
+          <li class="paddedbottom hightlight">Long press on 'select' to activate voice recognition. (Pebble Time, Time Steel and Time Round only)</li>
+          <li class="paddedbottom">The menu names are used on your Pebble screen. They are also translated to the IFTTT Maker 'event name'. They are made lowercase and spaces become underscores. For example, menu 'Living room' becomes event 'living_room'.</li>
+          <li class="paddedbottom">If 'toggle' is ticked, then the menu item will have a checkbox on your Pebble screen. Turning off will send an '_off' suffix, turning on will send an '_on' suffix. For example, 'living_room_off' and 'living_room_on' respectively.</li>
+          <li class="paddedbottom">After finish naming your menus name, click 'save'</li>
+      </ul>
+      </div>
+      
+      <p class="centre small">&copy; 2015 James Fowler</p>
+    </div>
+  </div>
+</body>
+</html>
