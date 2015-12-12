@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="devicehub.js"></script>
+    <script>
+        DeviceHubInit(5305,"fc4d8925-f54e-4f70-a035-c66bf863d055","670761ae-7469-4ca1-87c6-078d5ee17c73");
+	sensor1=new Sensor("lightcontrol");
+        actuator1=new Actuator("lightcontrol");
+        function getSensorValue()
+        {
+            var data=sensor1.getData(); //get data from API
+
+            //display data in tabel using JS
+            var x=document.getElementById('sensor1');
+            x.innerHTML=data['value'];
+           // console.log(data['value']);
+        }
+        function getActuatorValue()
+        {
+            var data=actuator1.getState(); //get data from API
+
+            //display data in tabel using JS
+            var x=document.getElementById('actuator1');
+            x.innerHTML=data['state'];
+           // console.log(data['value']);
+        }
+        function changeSensorValue()
+        {
+            var x=document.getElementById('sensor1_value');
+            console.log(x.value);
+            sensor1.sendData(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function changeActuatorValue()
+        {
+            var x=document.getElementById('actuator1_value');
+            console.log(x.value);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function loadData()
+        {
+            getSensorValue();
+            getActuatorValue();
+        }
+        
+        function changeActuatorValue_on()
+        {
+            var x=document.getElementById("value1");;
+            console.log(x.value);
+      //      alert(x.innerHTML);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function changeActuatorValue_off()
+        {
+            var x=document.getElementById("value0");;
+            console.log(x.value);
+      //      alert(x.innerHTML);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+
+    </script>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YunLight DeviceHub</title>
+</head>
+<body onload="loadData()">
+	<center>
+<!--	
+	    <table>
+	        <tr><td colspan="2"><h1>ON</h1></td></tr>
+	        <tr><th>Value</th><td><span id="actuator1"></span></td></tr>
+	        <tr><th>Change value</th><td><input type="text" id="value1" value="1"/></td></tr>
+	        <tr><td colspan="2"><center><input type="image" alt="on it!" src="Do_on.jpg" onclick="changeActuatorValue_on()"/></center></td></tr>
+	    </table>
+	    <table>
+	        <tr><td colspan="2"><h1>OFF</h1></td></tr>
+	        <tr><th>Value</th><td><span id="actuator1"></span></td></tr>
+	        <tr><th>Change value</th><td><input type="text" id="value0" value="0"/></tr>
+	        <tr><td colspan="2"><center><input type="image" alt="off it!" src="Do_off.jpg" onclick="changeActuatorValue_off()"/></center></td></tr>
+	    </table>
+-->
+    	<h1>ON</h1>
+    	<input type="hidden" id="value1" value="1" />
+    	<input type="image" alt="on it!" src="Do_on.jpg" onclick="changeActuatorValue_on()"/>
+    	<h1>OFF</h1>
+    	<input type="hidden" id="value0" value="0"/>
+    	<input type="image" alt="off it!" src="Do_off.jpg" onclick="changeActuatorValue_off()"/>
+    	
+	</center>
+</body>
+</html>
