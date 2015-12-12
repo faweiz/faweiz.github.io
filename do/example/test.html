@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="devicehub.js"></script>
+    <script>
+        DeviceHubInit(4655,"249cc882-ba23-4ad7-993f-26258e36203f","f5d1e3ab-210b-4e53-99d4-ee75cc843f4d");
+		sensor1=new Sensor("Testr");
+        actuator1=new Actuator("Bec");
+        function getSensorValue()
+        {
+            var data=sensor1.getData(); //get data from API
+
+            //display data in tabel using JS
+            var x=document.getElementById('sensor1');
+            x.innerHTML=data['value'];
+           // console.log(data['value']);
+        }
+        function getActuatorValue()
+        {
+            var data=actuator1.getState(); //get data from API
+
+            //display data in tabel using JS
+            var x=document.getElementById('actuator1');
+            x.innerHTML=data['state'];
+           // console.log(data['value']);
+        }
+        function changeSensorValue()
+        {
+            var x=document.getElementById('sensor1_value');
+            console.log(x.value);
+            sensor1.sendData(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function changeActuatorValue()
+        {
+            var x=document.getElementById('actuator1_value');
+            console.log(x.value);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function loadData()
+        {
+            getSensorValue();
+            getActuatorValue();
+        }
+
+    </script>
+    <title>DeviceHub JS library Test</title>
+</head>
+<body onload="loadData()">
+<center>
+    <table border>
+        <tr><td colspan="2"><h1>Sensor 1(digital)</h1></td></tr>
+        <tr><th>Value</th><td><span id="sensor1"></span></td></tr>
+        <tr><th>Change value</th><td><input type="text" id="sensor1_value"/></td></tr>
+        <tr><td colspan="2"><center><input type="button" onclick="changeSensorValue()" value="Change"/></center></td></tr>
+    </table>
+    <table border>
+        <tr><td colspan="2"><h1>Actuator 1</h1></td></tr>
+        <tr><th>Value</th><td><span id="actuator1"></span></td></tr>
+        <tr><th>Change value</th><td><input type="text" id="actuator1_value"/></td></tr>
+        <tr><td colspan="2"><center><input type="button" onclick="changeActuatorValue()" value="Change"/></center></td></tr>
+    </table>
+</center>
+</body>
+</html>
