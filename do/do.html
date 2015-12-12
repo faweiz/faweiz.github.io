@@ -44,82 +44,44 @@
             getSensorValue();
             getActuatorValue();
         }
+        
+        function changeActuatorValue_on()
+        {
+            var x=document.getElementById("value1");;
+            console.log(x.value);
+      //      alert(x.innerHTML);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        function changeActuatorValue_off()
+        {
+            var x=document.getElementById("value0");;
+            console.log(x.value);
+      //      alert(x.innerHTML);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
 
     </script>
     
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <style>
-.button {
-   border: 0px solid #ffffff;
-   background: #ff4400;
-   background: -webkit-gradient(linear, left top, left bottom, from(#ff530f), to(#ff4400));
-   background: -webkit-linear-gradient(top, #ff530f, #ff4400);
-   background: -moz-linear-gradient(top, #ff530f, #ff4400);
-   background: -ms-linear-gradient(top, #ff530f, #ff4400);
-   background: -o-linear-gradient(top, #ff530f, #ff4400);
-   background-image: -ms-linear-gradient(top, #ff530f 0%, #ff4400 100%);
-   padding: 20px 40px;
-   -webkit-border-radius: 30px;
-   -moz-border-radius: 30px;
-   border-radius: 30px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   text-shadow: #ffffff 0 1px 0;
-   color: #ffffff;
-   font-size: 24px;
-   font-family: helvetica, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.button:hover {
-   border: 0px solid #ffffff;
-   text-shadow: #ffffff 0 1px 0;
-   background: #ff530f;
-   background: -webkit-gradient(linear, left top, left bottom, from(#ff530f), to(#ff530f));
-   background: -webkit-linear-gradient(top, #ff530f, #ff530f);
-   background: -moz-linear-gradient(top, #ff530f, #ff530f);
-   background: -ms-linear-gradient(top, #ff530f, #ff530f);
-   background: -o-linear-gradient(top, #ff530f, #ff530f);
-   background-image: -ms-linear-gradient(top, #ff530f 0%, #ff530f 100%);
-   color: #fff;
-   }
-.button:active {
-   text-shadow: #ffffff 0 1px 0;
-   border: 0px solid #ffffff;
-   background: #ff0000;
-   background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#ff530f));
-   background: -webkit-linear-gradient(top, #ff0000, #ff0000);
-   background: -moz-linear-gradient(top, #ff0000, #ff0000);
-   background: -ms-linear-gradient(top, #ff0000, #ff0000);
-   background: -o-linear-gradient(top, #ff0000, #ff0000);
-   background-image: -ms-linear-gradient(top, #ff0000 0%, #ff0000 100%);
-   color: #fff;
-   }
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>DeviceHub JS library Test</title>
+	<title>DeviceHub YunLight</title>
 </head>
 <body onload="loadData()">
-<center>
-    <table border>
-        <tr><td colspan="2"><h1>Sensor 1(digital)</h1></td></tr>
-        <tr><th>Value</th><td><span id="sensor1">12</span></td></tr>
-        <tr><th>Change value</th><td><input type="text" id="sensor1_value"/></td></tr>
-        <tr><td colspan="2"><center><input type="button" onclick="changeSensorValue()" value="Change"/></center></td></tr>
-    </table>
-    <table border>
-        <tr><td colspan="2"><h1>Actuator 1</h1></td></tr>
-        <tr><th>Value</th><td><span id="actuator1"></span></td></tr>
-        <tr><th>Change value</th><td><input type="text" id="actuator1_value"/></td></tr>
-        <tr><td colspan="2"><center><input type="button" class='button' onclick="changeActuatorValue()" value="Change"/></center></td></tr>
-    </table>
-	
-	<input type="image" src="Do.jpg" alt="Do it!" onclick="changeActuatorValue()">
-	
-</center>
-<br>
-<p><a href='google.com' class='button'>Do</a></p>
+	<center>
+
+	    <table>
+	        <tr><td colspan="2"><h1>ON</h1></td></tr>
+	        <tr><th>Change value</th><td><input type="text" id="value1" value="1"/></td></tr>
+	        <tr><td colspan="2"><center><input type="image" id="value1" alt="on" src="Do_on.jpg" alt="on it!" onclick="changeActuatorValue_on()"/></center></td></tr>
+	    </table>
+	    <table>
+	        <tr><td colspan="2"><h1>OFF</h1></td></tr>
+	        <tr><th>Change value</th><td><input type="text" id="value0" value="0"/></tr>
+	        <tr><td colspan="2"><center><input type="image" id="value0" alt="off" src="Do_off.jpg" alt="on it!" onclick="changeActuatorValue_off()"/></center></td></tr>
+	    </table>
+    	
+	</center>
 </body>
 </html>
