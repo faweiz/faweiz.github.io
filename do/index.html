@@ -64,7 +64,7 @@
 
     </script>
     
-//	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1">  -->
 	<title>YunLight DeviceHub</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
@@ -72,9 +72,9 @@
 	    var n = 0;
 	    $("input").select(function(){
 	     if(n%2 == 0)
-	        $("input").after(" On! ");
+	        $("input").after(" ON! ");
 	     else
-	        $("input").after(" Off! ");
+	        $("input").after(" OFF! ");
 	    });
 	    $("img").click(function(){
 	        $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
@@ -108,9 +108,9 @@
     	<input type="hidden" id="value0" value="0"/>
     	<input type="image" alt="off it!" src="Do_off.jpg" onclick="changeActuatorValue_off()"/>
 -->    	
-
+	<h1>圣诞灯控制开关</h1>
 	<img src="Do_on.jpg" alt="Do it!" width="100%"/>
 	</center>
-	<h1><input type="hidden"/></h1><br><br>
+	<h2><input type="hidden"/></h2><br><br>
 </body>
 </html>
