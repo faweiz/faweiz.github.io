@@ -39,6 +39,15 @@
             actuator1.sendState(x.value);//send data to API
             location.reload(); // refresh page
         }
+        
+        function changeActuatorValue_off()
+        {
+            var x=0;
+            console.log(x.value);
+            actuator1.sendState(x.value);//send data to API
+            location.reload(); // refresh page
+        }
+        
         function loadData()
         {
             getSensorValue();
@@ -69,6 +78,7 @@
 	<title>DeviceHub YunLight</title>
 </head>
 <body onload="loadData()">
+<<<<<<< HEAD
 	<center>
 
 	    <table>
@@ -83,5 +93,25 @@
 	    </table>
     	
 	</center>
+=======
+<center>
+    <table border>
+        <tr><td colspan="2"><h1>Sensor 1(digital)</h1></td></tr>
+        <tr><th>Value</th><td><span id="sensor1">1</span></td></tr>
+        <tr><th>Change value</th><td><input type="text" id="sensor1_value"/></td></tr>
+        <tr><td colspan="2"><center><input type="button" onclick="changeSensorValue()" value="Change"/></center></td></tr>
+    </table>
+    <table border>
+        <tr><td colspan="2"><h1>Actuator 1</h1></td></tr>
+        <tr><th>Value</th><td><span id="actuator1"></span></td></tr>
+        <tr><th>Change value</th><td><input type="text" id="actuator1_value"/></td></tr>
+        <tr><td colspan="2"><center><input type="button" class='button' onclick="changeActuatorValue_off()" value="Change"/></center></td></tr>
+    </table>
+	
+	<input type="image" src="Do.jpg" alt="Do it!" onclick="changeActuatorValue()">
+	
+</center>
+
+>>>>>>> origin/master
 </body>
 </html>
