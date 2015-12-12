@@ -5,7 +5,7 @@
 
 var PROJECT_ID=;
 var API_KEY="";
-var DEVICE_UUID=";
+var DEVICE_UUID="";
 
 function DeviceHubInit(prj_id,api,uuid)
 {
