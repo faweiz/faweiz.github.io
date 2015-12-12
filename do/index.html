@@ -72,9 +72,9 @@
 	    var n = 0;
 	    $("input").select(function(){
 	     if(n%2 == 0)
-	        $("input").after("On!");
+	        $("input").after(" On! ");
 	     else
-	        $("input").after("Off!");
+	        $("input").after(" Off! ");
 	    });
 	    $("img").click(function(){
 	        $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
@@ -109,7 +109,9 @@
     	<input type="image" alt="off it!" src="Do_off.jpg" onclick="changeActuatorValue_off()"/>
 -->    	
 
-<img src="Do_on.jpg" alt="Do it!"/>
+	<h1><input type="hidden" ></h1><br><br>
+	
+	<img src="Do_on.jpg" alt="Do it!"/>
 
 	</center>
 </body>
