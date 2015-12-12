@@ -69,11 +69,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
-	  $("img").click(function(){
-	    $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
-    	   });
+	    var n = 0;
+	    $("input").select(function(){
+	     if(n%2 == 0)
+	        $("input").after("On!");
+	     else
+	        $("input").after("Off!");
+	    });
+	    $("img").click(function(){
+	        $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
+	        $("input").trigger("select");
+	    n++;
+	    });
 	});
-</script>
+	</script>
 	
 </head>
 <body onload="loadData()">
