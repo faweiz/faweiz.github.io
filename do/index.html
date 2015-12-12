@@ -72,9 +72,9 @@
 	    var n = 0;
 	    $("input").select(function(){
 	     if(n%2 == 0)
-	        $("input").after(n+" ON! ");
+	        $("input").after(n+": ON ");
 	     else
-	        $("input").after(n+" OFF! ");
+	        $("input").after(n+": OFF ");
 	    });
 	    $("img").click(function(){
 	        $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
