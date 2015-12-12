@@ -66,6 +66,15 @@
     
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>YunLight DeviceHub</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  $("img").click(function(){
+	    $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
+    	   });
+	});
+</script>
+	
 </head>
 <body onload="loadData()">
 	<center>
@@ -90,6 +99,9 @@
     	<input type="hidden" id="value0" value="0"/>
     	<input type="image" alt="off it!" src="Do_off.jpg" onclick="changeActuatorValue_off()"/>
 -->    	
+
+<img src="http://amccus.com/do/Do_on.jpg" alt="Do it!"/>
+
 	</center>
 </body>
 </html>
