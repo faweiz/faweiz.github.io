@@ -3,7 +3,7 @@
  */
 
 
-var PROJECT_ID="5305";
+var PROJECT_ID=5305;
 var API_KEY="fc4d8925-f54e-4f70-a035-c66bf863d055";
 var DEVICE_UUID="670761ae-7469-4ca1-87c6-078d5ee17c73";
 
