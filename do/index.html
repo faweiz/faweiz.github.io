@@ -64,8 +64,8 @@
         }
     </script>
     <script>
-        var imgUrl = "https://faweiz.github.io/do/Do_on.jpg";
-        var lineLink = "https://faweiz.github.io/do/";
+        var imgUrl = "http://faweiz.github.io/do/Do_on.jpg";
+        var lineLink = "http://faweiz.github.io/do/";
         var descContent = '用DeviceHub链接YunLight控制圣诞灯的开关';
         var shareTitle = 'YunLight圣诞灯控制开关 ';
         var appid = '';
@@ -74,8 +74,8 @@
             WeixinJSBridge.invoke('sendAppMessage',{
                 "appid": appid,
                 "img_url": imgUrl,
-                "img_width": "200",
-                "img_height": "200",
+                "img_width": "150",
+                "img_height": "150",
                 "link": lineLink,
                 "desc": descContent,
                 "title": shareTitle
@@ -86,8 +86,8 @@
         function shareTimeline() {
             WeixinJSBridge.invoke('shareTimeline',{
                 "img_url": imgUrl,
-                "img_width": "200",
-                "img_height": "200",
+                "img_width": "150",
+                "img_height": "150",
                 "link": lineLink,
                 "desc": descContent,
                 "title": shareTitle
