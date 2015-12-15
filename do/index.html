@@ -126,15 +126,18 @@
 	var n = 0;
 	    $("span").click(function(){
 	     
-	     if(n%2 == 0)
+	     if(n%2 == 0){
 	    	$("#bg").attr('src',"Do_on.jpg");
-	     else
+	    	$.post("https://maker.ifttt.com/trigger/yunlight_on/with/key/cfMURKOr7oZMGUh6pkMfl_");
+	     }else{
 	     	$("#bg").attr('src',"Do_off.jpg");	
-	     $.post("https://maker.ifttt.com/trigger/yunlight/with/key/cfMURKOr7oZMGUh6pkMfl_");
+	     	$.post("https://maker.ifttt.com/trigger/yunlight_off/with/key/cfMURKOr7oZMGUh6pkMfl_");
+	     }
 	     n++;
 	    });
 	});
 	</script>
+	
 	
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
