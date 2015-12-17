@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<!-- vim: set enc=utf-8 tenc=utf-8 fenc=utf-8 guifont=consolas: -->
 <html>
   <head>
-    <title>Timely</title>
+    <title>TimeYun</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css" />
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
-  <!--
-   This page and its contents are Copyright Martin Norland (@cynorg), 2014.
-
-   All rights reserved.
-
-   No permission is given to copy, distribute, modify, or reuse the contents herein
-
-   I intend to build this into a proper library for Pebble configuration pages
-
-   email me at cyn@cyn.org if yoú're interested in my progress.
-   -->
     <script>
       var openSection = null;
       var openGroup = null;
       var localOptions = null;
       var lastLanguage = null;
-      var ui_trans={ // http://en.wikipedia.org/wiki/ISO_639-1
+      var ui_trans={
         'misc': {
           'language': {
             'EN':'English'
@@ -61,8 +49,10 @@
             ,'ES':'Guardar' // Salvar = safe ?  Ahorrar = save
           } ,'loading': {
             'EN':'Loading'
+			,'CN':'加载中'
           } ,'none': {
             'EN':'None'
+			,'CN':'无'
             ,'RU':"Ни одна" //GT
             ,'ES':'Nunca'
           } ,'1X': {
@@ -86,32 +76,40 @@
         ,'general': {
           'header': {
             'EN':'General'
+			,'CN':'通用'
             ,'RU':"Общие"
             ,'ES':""
           } ,'theme': {
             'EN':'Theme'
+			,'CN':'主题'
             ,'RU':"Тема"
             ,'ES':""
           } ,'t_dark': {
             'EN':'Dark'
+			,'CN':'黑色'
             ,'RU':"Темная"
             ,'ES':""
           } ,'t_light':  {
             'EN':'Light'
+			,'CN':'白色'
             ,'RU':"Светлая"
             ,'ES':""
           } ,'show_status': {
             'EN':'Show Statusbar'
+			,'CN':'显示状态栏'
           } ,'vibe': {
             'EN':'Hourly Vibration'
+			,'CN':'每小时振动'
             ,'RU':"Почасовая вибрация"
             ,'ES':""
           } ,'v_disc': {
             'EN':'Disconnect Vibration'
+			,'CN':'断线振动'
             ,'RU':"Вибрация при потере связи с телефоном"
             ,'ES':""
           } ,'v_conn': {
             'EN':'Connect Vibration'
+			,'CN':'连线振动'
             ,'RU':"Вибрация при подключении к телефону"
             ,'ES':""
           } ,'v_min': {
@@ -131,14 +129,17 @@
         ,'translations': {
           'header':           {
             'EN':'Translations'
+			,'CN':'翻译'
             ,'RU':"Перевод"
             ,'ES':""
           } ,'status': {
             'EN':'Status'
+			,'CN':'状态'
             ,'RU':"Статус"
             ,'ES':""
           } , 'connected': {
             'EN':'Connected'
+			,'CN':'已连接'
             ,'RU':"Соединен"
             ,'ES':"Conectado"
             ,'FR':"Lié"
@@ -147,6 +148,7 @@
             ,'NL':"Aangesloten"
           } , 'd_connected': {
             'EN':'Linked'
+			,'CN':'链接的'
             ,'RU':"Соед"
             ,'ES':"Conectado"
             ,'FR':"Lié"
@@ -155,6 +157,7 @@
             ,'NL':"Verband"
           } , 'disconnected': {
             'EN':'Disconnected'
+			,'CN':'已断开'
             ,'RU':"Отключен"
             ,'ES':"Desconectado"
             ,'FR':"Coupé"
@@ -163,6 +166,7 @@
             ,'NL':"Losmakend"
           } , 'd_disconnected': {
             'EN':'No Link'
+			,'CN':'没有链接'
             ,'RU':"НЕТ Соед"
             ,'FR':"Coupé"
             ,'ES':""
@@ -171,10 +175,12 @@
             ,'NL':"losmakend"
           } , 'daysofweek': {
             'EN':'Days of Week'
+			,'CN':'周天'
             ,'RU':"Дни недели"
             ,'ES':""
           } , 'abbr_daysofweek': {
             'EN':'Days of Week (abbreviated)'
+			,'CN':'周天（缩写）'
             ,'RU':"Дни недели (аббр)"
             ,'ES':""
           } , 'sunday': {
@@ -291,6 +297,7 @@
             ,'NL':'za'
           } , 'months': {
             'EN':'Months'
+			,'CN':'月份'
             ,'RU':"Месяца"
             ,'ES':''
             ,'FR':''
@@ -299,6 +306,7 @@
             ,'NL':''
           } , 'abbr_months': {
             'EN':'Months (abbreviated)'
+			,'CN':'月份（缩写）'
             ,'RU':"Месяца (аббр)"
             ,'ES':''
             ,'FR':''
@@ -502,18 +510,23 @@
         ,'weather': {
           'header': {
             'EN':'Weather'
+			,'CN':'天气'
           }
           ,'weather_units': {
             'EN':'Units'
+			,'CN':'单位'
           }
           ,'fahrenheit': {
             'EN':'Fahrenheit'
+			,'CN':'华氏度'
           }
           ,'celsius': {
             'EN':'Celsius'
+			,'CN':'摄氏度'
           }
           ,'weather_update': {
             'EN':'Update Frequency'
+			,'CN':'更新频率'
           }
           ,'off': {
             'EN':'Disabled'
@@ -531,40 +544,44 @@
         ,'clock': {
           'header': {
             'EN':'Clock'
+			,'CN':'时钟'
             ,'RU':"Часы"
             ,'ES':""
           }
 
           ,'date_format': {
             'EN':'Date Format'
+			,'CN':'日期格式'
             ,'RU':'Формат даты'
             ,'ES':""
           }
-          ,'date_format_note': {
-            'EN':'Localized date formats are at the top, use the search box to find a specific date format, I recommend entering a preferred delimiter'
-          }
           ,'below_time': {
             'EN':'Below Time'
+			,'CN':'时间下面'
             ,'RU':''
             ,'ES':""
           }
           ,'style_week':  {
             'EN':'Left'
+			,'CN':'左'
             ,'RU':""
             ,'ES':""
           }
           ,'style_day':   {
             'EN':'Middle'
+			,'CN':'日期格式'
             ,'RU':""
             ,'ES':""
           }
           ,'style_am_pm': {
             'EN':'Right'
+			,'CN':'右'
             ,'RU':""
             ,'ES':""
           }
           ,'week_format': {
             'EN':'Week Format'
+			,'CN':'周期格式'
             ,'RU':""
             ,'ES':""
           }
@@ -726,6 +743,7 @@
         ,'calendar': {
           'header': {
             'EN':'Calendar'
+			,'CN':'日历'
             ,'RU':"Календарь"
             ,'ES':""
           }
@@ -736,11 +754,13 @@
           }
           ,'grid':          {
             'EN':'Grid'
+			,'CN':'格'
             ,'RU':"Линии"
             ,'ES':""
           }
           ,'start_of_week': {
             'EN':'Start of Week'
+			,'CN':'周期的第一天'
             ,'RU':"Начало недели"
             ,'ES':""
           }
@@ -781,6 +801,7 @@
           }
           ,'week_pattern': {
             'EN':'Weeks to Show'
+			,'CN':'星期显示'
           }
           ,'wkp_0': {
             'EN':'Previous, Current, Next'
@@ -804,43 +825,24 @@
         ,'advanced': {
           'header': {
             'EN':'Advanced'
+			,'CN':'高级'
             ,'RU':""
             ,'ES':""
           }
           ,'debugging': {
             'EN':'Debugging'
+			,'CN':'调试'
             ,'RU':""
             ,'ES':""
           }
           ,'debuglang': {
             'EN':'Language/Translation Debugging'
+			,'CN':'语言翻译调试'
             ,'RU':""
             ,'ES':""
           }
         }
       };
-      /*
-        // unused, extra translations
-        ,'RU': {
-          ,'general': {
-            ,"__font":     "Шрифт часов" // unused
-            ,"__weather":  "Погода"      // unused
-            ,"__showbatt": "Состояние батареи" // unused
-            ,'__gps':      "" // unused
-            ,"__selected": "" // unused
-            ,"__get_location": "" // unused
-            ,"__units_of_measurement": "" // unused
-            ,'__min':          "мин" // unused (as in minute)
-            ,"__celsius":      "" // unused
-            ,"__fahrenheit":   "" // unused
-            ,"__time_between_checks_for_weather": "Интервал обновления" // unused
-            ,"__1hour":        "1 час" // unused
-            ,"__2hours":       "2 час" // unused
-            ,"__first_page":   "Первая страница" // unused
-            ,"__shake_to_switch":  "переключение встряхиванием" // unused
-          }
-        };
-      */
       // ui_settings= {section {g [ {f []} ] } }
       var ui_settings={
         'general': {
@@ -1162,18 +1164,6 @@
         $("#loading").popup('close');
       }
 
-      /*
-function bindEventTouch(element) {
-    element.bind('tap', function(event, ui) {
-       if(element.hasClass('ui-collapsible-collapsed')) {
-            alert(element.attr('id')+' is closed');
-        } else {
-            alert(element.attr('id')+' is open');
-        }
-    });
-}
-*/
-
       function bindEvents(element) {
         //'click change dblclick submit collapsibleexpand collapsiblecollapse'
         element.bind('collapsibleexpand collapsiblecollapse', function(event) {
@@ -1265,7 +1255,6 @@ function bindEventTouch(element) {
                     }
                   }
           
-  //                $("input[name=key"+field.ak+"]").val(localOptions[field.ak]);
                 } else if (field.t == 'text') {
                   $("input[name=key"+field.ak+"]").val(localOptions[field.ak]);
                 } else {
@@ -1324,7 +1313,7 @@ function bindEventTouch(element) {
         localOptions[524] = o['trans_thursday'];
         localOptions[525] = o['trans_friday'];
         localOptions[526] = o['trans_saturday'];
-        //console.log("Upgraded options: " + JSON.stringify(localOptions));
+        console.log("Upgraded options: " + JSON.stringify(localOptions));
       }
 
       function loadOptions() {
@@ -1332,11 +1321,11 @@ function bindEventTouch(element) {
           if (window.localStorage.pebble_timely_options) {
             var tempOptions = JSON.parse(window.localStorage.pebble_timely_options);
             if (typeof tempOptions['web'] !== "undefined") {
-              //console.log("Latest options found: " + JSON.stringify(tempOptions));
+              console.log("Latest options found: " + JSON.stringify(tempOptions));
               localOptions = tempOptions;
               return localOptions['web']['lang'];
             } else {
-              //console.log("Old options found: " + JSON.stringify(tempOptions));
+              console.log("Old options found: " + JSON.stringify(tempOptions));
               upgradeOptions_old_to_v22(tempOptions);
             }
           }
@@ -1359,7 +1348,6 @@ function bindEventTouch(element) {
             window.localStorage.pebble_timely_options = ls_pto;
             console.log("Options: " + ls_pto);
           }
-          //var location = "pebblejs://close#" + ls_pto;
           var location = "pebblejs://close#" + utf8_to_b64(ls_pto);
           console.log("Warping to: " + location);
           document.location = location;
@@ -1398,14 +1386,11 @@ function bindEventTouch(element) {
       </div>
       <div data-role="footer" data-theme="a">
         <div class="ui-body ui-body-c">
-<div data-role="navbar" data-position="fixed">
-    <ul>
-        <li><a href="#" class="ui-state-disabled">&copy; @cynorg 2014</a></li>
-        <li><a href="#" class="peb-submit ui-btn-icon-right ui-icon-check">(submit)</a></li>
-    </ul>
-</div><!-- /navbar -->
-
-        </div>
+          <fieldset class="ui-grid-a">
+              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
+          </fieldset>
+        </div>	
       </div>
     </div>
     </form>
