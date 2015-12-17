@@ -1381,8 +1381,18 @@
       <div data-role="footer" data-theme="a">
         <div class="ui-body ui-body-c">
           <fieldset class="ui-grid-a">
-              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
-              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
+            <!--  <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>-->
+			  
+			  <button onclick="goBack()">Go Back</button>
+
+				<script>
+				function goBack() {
+					window.history.back();
+				}
+				</script>
+			  
+			  <li><a href="#" class="peb-submit ui-btn-icon-left ui-icon-check">(submit)</a></li>
           </fieldset>
         </div>	
       </div>
