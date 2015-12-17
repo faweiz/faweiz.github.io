@@ -22,7 +22,7 @@
             ,'IT':'Italian'
             ,'NL':'Dutch'
             ,'RU':'Русский'
-			,'CN':'China'
+			,'CN':'中文'
           } ,'default': {
             'EN':'Default'
             ,'RU':"дефолт" //GT
