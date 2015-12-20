@@ -1,0 +1,12 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#x-axis, #z-axis, #y-axis {
+  font: 48px "Futura Extra Bold", Helvetica Bold, Arial, sans-serif;
+}
